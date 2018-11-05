@@ -1,0 +1,26 @@
+// Add your native dependencies here:
+
+// Uncomment to add recyclerview-v7 dependency
+//dependencies {
+//	implementation 'com.android.support:recyclerview-v7:+'
+//}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+}
+android {
+  defaultConfig {
+    generatedDensities = []
+    applicationId = "pt.minsaude.spms.ces"
+  }
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+}

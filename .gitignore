@@ -1,0 +1,13 @@
+node_modules/
+platforms/
+hooks/
+report/
+app/**/*.js
+app/**/*.map
+app/**/*.css
+.DS_Store
+.vscode
+.idea
+!app/app.css
+
+
